@@ -26,6 +26,18 @@ public class UserValidatorTestCases{
         boolean result = UserValidator.userValidation("sogale",UserValidator.lastNamePattern);
         Assert.assertFalse(result);
     }
+    
+    @Test                                                                                                                     // Right Email
+    public void email_EnteredProper(){
+        boolean result = UserValidator.userValidation("jasonSmith@gmail.com",UserValidator.emailIdPattern);
+        Assert.assertTrue(result);
+    }
+
+    @Test                                                                                                                     // Wrong Email
+    public void email_EnteredWrong(){
+        boolean result = UserValidator.userValidation("jasonSmith",UserValidator.emailIdPattern);
+        Assert.assertFalse(result);
+    }
 
 }  
 
