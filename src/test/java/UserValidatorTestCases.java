@@ -38,6 +38,18 @@ public class UserValidatorTestCases{
         boolean result = UserValidator.userValidation("jasonSmith",UserValidator.emailIdPattern);
         Assert.assertFalse(result);
     }
+    
+     @Test                                                                                                                     // Right PhoneNumber
+    public void phonenumber_EnteredProper(){
+        boolean result = UserValidator.userValidation("91 9632145632",UserValidator.phoneNumberPattern);
+        Assert.assertTrue(result);
+    }
+
+    @Test                                                                                                                     // Wrong PhoneNumber
+    public void phonenumber_EnteredWrong(){
+        boolean result = UserValidator.userValidation("91321456325",UserValidator.phoneNumberPattern);
+        Assert.assertFalse(result);
+    }
 
 }  
 
